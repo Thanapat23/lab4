@@ -228,7 +228,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                                       decoration: InputDecoration(
                                                           contentPadding:
                                                               const EdgeInsets
-                                                                      .only(
+                                                                  .only(
                                                                   bottom: 10,
                                                                   left: 20),
                                                           border: OutlineInputBorder(
@@ -311,7 +311,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                                   SizedBox(
                                                       width: 280,
                                                       child: Image.asset(
-                                                        'asset/qrCode.jpg',
+                                                        'asset/qrcode2.jpg',
                                                       )),
                                                 ],
                                               ),
