@@ -19,6 +19,38 @@ class FoodShop extends ChangeNotifier {
         price: 320,
         imagePath: "asset/sangsomk.jpeg",
         quntity: 0),
+    Food(
+        name: 'แสงโสม (แบน)',
+        price: 170,
+        imagePath: "asset/sangsomb.jpeg",
+        quntity: 0),
+    Food(
+        name: 'หงส์ทอง (กลม)',
+        price: 280,
+        imagePath: "asset/hongtongk.jpeg",
+        quntity: 0),
+    Food(
+        name: 'แสงโสม (แบน)',
+        price: 160,
+        imagePath: "asset/hongtongb.jpeg",
+        quntity: 0),
+    Food(
+        name: 'เบียร์สิงห์',
+        price: 70,
+        imagePath: "asset/singha.jpeg",
+        quntity: 0),
+    Food(
+        name: 'เบียร์ลีโอ', price: 65, imagePath: "asset/leo.jpeg", quntity: 0),
+    Food(
+        name: 'เบียร์ช้าง',
+        price: 65,
+        imagePath: "asset/chang.jpeg",
+        quntity: 0),
+    Food(name: 'โซดา', price: 15, imagePath: "asset/soda.jpeg", quntity: 0),
+    Food(
+        name: 'น้ำอัดลม', price: 15, imagePath: "asset/fanta.jpeg", quntity: 0),
+    Food(name: 'น้ำแข็ง', price: 10, imagePath: "asset/ice.jpg", quntity: 0),
+    Food(name: 'น้ำเปล่า', price: 5, imagePath: "asset/water.jpeg", quntity: 0),
   ];
   //user cart
   List<Food> _userCart = [];
@@ -44,31 +76,67 @@ class FoodShop extends ChangeNotifier {
     _userCart = [];
     _shop = [
       Food(
-          name: 'Moo Yang',
+          name: 'ย่าง (จาน)',
           price: 50,
-          imagePath: "asset/mooyang.jpg",
-          quntity: 0),
-      Food(
-          name: 'Kang Moo Yang',
-          price: 55,
           imagePath: "asset/kangmoo.jpg",
           quntity: 0),
       Food(
-          name: 'Sam Chan Yang',
-          price: 60,
-          imagePath: "asset/samchan.jpg",
+          name: 'แหนม (จาน)',
+          price: 30,
+          imagePath: "asset/naem.jpg",
           quntity: 0),
       Food(
-          name: 'Lin Moo Yang',
-          price: 45,
-          imagePath: "asset/linmoo.jpg",
+          name: 'แหนม (ห่อ)',
+          price: 10,
+          imagePath: "asset/naem.jpg",
           quntity: 0),
       Food(
-          name: 'Sai Yang',
-          price: 40,
-          imagePath: "asset/saiyang.jpg",
+          name: 'แสงโสม (กลม)',
+          price: 320,
+          imagePath: "asset/sangsomk.jpeg",
           quntity: 0),
-      Food(name: 'Naem', price: 30, imagePath: "asset/naem.jpg", quntity: 0),
+      Food(
+          name: 'แสงโสม (แบน)',
+          price: 170,
+          imagePath: "asset/sangsomb.jpeg",
+          quntity: 0),
+      Food(
+          name: 'หงส์ทอง (กลม)',
+          price: 280,
+          imagePath: "asset/hongtongk.jpeg",
+          quntity: 0),
+      Food(
+          name: 'แสงโสม (แบน)',
+          price: 160,
+          imagePath: "asset/hongtongb.jpeg",
+          quntity: 0),
+      Food(
+          name: 'เบียร์สิงห์',
+          price: 70,
+          imagePath: "asset/singha.jpeg",
+          quntity: 0),
+      Food(
+          name: 'เบียร์ลีโอ',
+          price: 65,
+          imagePath: "asset/leo.jpeg",
+          quntity: 0),
+      Food(
+          name: 'เบียร์ช้าง',
+          price: 65,
+          imagePath: "asset/chang.jpeg",
+          quntity: 0),
+      Food(name: 'โซดา', price: 15, imagePath: "asset/soda.jpeg", quntity: 0),
+      Food(
+          name: 'น้ำอัดลม',
+          price: 15,
+          imagePath: "asset/fanta.jpeg",
+          quntity: 0),
+      Food(name: 'น้ำแข็ง', price: 10, imagePath: "asset/ice.jpg", quntity: 0),
+      Food(
+          name: 'น้ำเปล่า',
+          price: 5,
+          imagePath: "asset/water.jpeg",
+          quntity: 0),
     ];
     notifyListeners();
   }

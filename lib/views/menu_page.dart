@@ -31,7 +31,8 @@ class _MenuPageState extends State<MenuPage> {
               child: Scaffold(
                 backgroundColor: const Color.fromARGB(255, 255, 252, 236),
                 appBar: AppBar(
-                  title: const Text('M E N U'),
+                  title: const Text('เมนูอาหารและเครื่องดื่ม',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                   backgroundColor: const Color.fromARGB(255, 254, 246, 127),
                   foregroundColor: Colors.black,
                   centerTitle: true,
@@ -42,12 +43,6 @@ class _MenuPageState extends State<MenuPage> {
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        const Text(
-                          'Select menu',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 20),
                         Expanded(
                           child: ListView.builder(
                             itemCount: value.foodShop.length,

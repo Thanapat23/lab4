@@ -26,18 +26,19 @@ class BottomNavbar extends StatelessWidget {
           const GButton(
             icon: Icons.list_alt_rounded,
             iconSize: 35,
-            text: 'Menu',
+            text: 'รายการ',
             textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           GButton(
             icon: Icons.shopping_cart,
             iconSize: 35,
-            text: 'Cart',
+            text: 'ตะกร้า',
             textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             leading: badges.Badge(
                 showBadge: context.watch<FoodShop>().userCart.length > 0,
                 position: badges.BadgePosition.topEnd(top: -10, end: -1),
-                badgeContent: Text('${context.watch<FoodShop>().userCart.length}'),
+                badgeContent:
+                    Text('${context.watch<FoodShop>().userCart.length}'),
                 child: Icon(
                   Icons.shopping_cart,
                   size: 35,
