@@ -109,24 +109,39 @@ class _MyCartPageState extends State<MyCartPage> {
                         return Column(
                           children: [
                             if (cartFood.quntity > 0)
-                              ListTile(
-                                title: Text(cartFood.name,
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold)),
-                                subtitle: Text(
-                                    '${cartFood.price} x ${cartFood.quntity}',
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold)),
-                                trailing: IconButton(
-                                    onPressed: () =>
-                                        removeFromCart(cartFood, context),
-                                    icon: const Icon(
-                                      Icons.remove_circle,
-                                      color: Colors.red,
-                                      size: 30,
-                                    )),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 3, horizontal: 10),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      color: Color.fromARGB(
+                                        255,
+                                        254,
+                                        250,
+                                        192,
+                                      ),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(15))),
+                                  child: ListTile(
+                                    title: Text(cartFood.name,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    subtitle: Text(
+                                        '${cartFood.price} x ${cartFood.quntity}',
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    trailing: IconButton(
+                                        onPressed: () =>
+                                            removeFromCart(cartFood, context),
+                                        icon: const Icon(
+                                          Icons.remove_circle,
+                                          color: Colors.red,
+                                          size: 30,
+                                        )),
+                                  ),
+                                ),
                               ),
                           ],
                         );
