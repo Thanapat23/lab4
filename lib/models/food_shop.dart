@@ -21,9 +21,7 @@ class FoodShop extends ChangeNotifier {
   //get quntity
   //add item cart
   void addItemToCart(Food food, int quntity) {
-    
     _userCart.add(food);
-
     notifyListeners();
   }
 
