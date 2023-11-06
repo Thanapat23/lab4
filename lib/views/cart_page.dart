@@ -33,17 +33,20 @@ class _MyCartPageState extends State<MyCartPage> {
                   Radius.circular(20),
                 ),
                 side: BorderSide(color: Colors.black, width: 3)),
-            title: const Text('Delete Cart'),
+            title: const Text(
+              'ลบรายการ',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             content: const Text(
-              'You want to delete all.',
+              'คุณต้องการลบรายการทั้งหมดใช่หรือไม่',
             ),
             actions: <Widget>[
               TextButton(
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('Cancel',
-                    style: TextStyle(color: Colors.redAccent)),
+                child:
+                    const Text('ไม่ใช่', style: TextStyle(color: Colors.red)),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -53,8 +56,8 @@ class _MyCartPageState extends State<MyCartPage> {
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
                 child: const Text(
-                  'OK',
-                  style: TextStyle(color: Colors.greenAccent),
+                  'ใช่',
+                  style: TextStyle(color: Colors.green),
                 ),
                 onPressed: () {
                   shop.removeAll();
@@ -84,7 +87,8 @@ class _MyCartPageState extends State<MyCartPage> {
         builder: (context, value, child) => SafeArea(
               child: Scaffold(
                   appBar: AppBar(
-                    title: const Text('C A R T'),
+                    title: const Text('สรุปรายการ',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                     backgroundColor: const Color.fromARGB(255, 254, 246, 127),
                     foregroundColor: Colors.black,
                     centerTitle: true,
@@ -105,24 +109,39 @@ class _MyCartPageState extends State<MyCartPage> {
                         return Column(
                           children: [
                             if (cartFood.quntity > 0)
-                              ListTile(
-                                title: Text(cartFood.name,
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold)),
-                                subtitle: Text(
-                                    '${cartFood.price} x ${cartFood.quntity}',
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold)),
-                                trailing: IconButton(
-                                    onPressed: () =>
-                                        removeFromCart(cartFood, context),
-                                    icon: const Icon(
-                                      Icons.remove_circle,
-                                      color: Colors.red,
-                                      size: 30,
-                                    )),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 3, horizontal: 10),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      color: Color.fromARGB(
+                                        255,
+                                        254,
+                                        250,
+                                        192,
+                                      ),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(15))),
+                                  child: ListTile(
+                                    title: Text(cartFood.name,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    subtitle: Text(
+                                        '${cartFood.price} x ${cartFood.quntity}',
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    trailing: IconButton(
+                                        onPressed: () =>
+                                            removeFromCart(cartFood, context),
+                                        icon: const Icon(
+                                          Icons.remove_circle,
+                                          color: Colors.red,
+                                          size: 30,
+                                        )),
+                                  ),
+                                ),
                               ),
                           ],
                         );
@@ -148,7 +167,7 @@ class _MyCartPageState extends State<MyCartPage> {
                           child: const Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(
-                              'Pay',
+                              'คิดเงิน',
                               style:
                                   TextStyle(fontSize: 20, color: Colors.black),
                             ),
@@ -164,8 +183,11 @@ class _MyCartPageState extends State<MyCartPage> {
                                       backgroundColor: const Color.fromARGB(
                                           255, 255, 252, 236),
                                       title: const Center(
-                                          child: Text('Total Price',
-                                              style: TextStyle(fontSize: 24))),
+                                          child: Text('สรุปราคา',
+                                              style: TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight:
+                                                      FontWeight.bold))),
                                       shape: const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(20),
@@ -180,7 +202,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                               children: [
                                                 const Expanded(
                                                     child: Center(
-                                                        child: Text('Total',
+                                                        child: Text('ทั้งหมด',
                                                             style: TextStyle(
                                                                 fontSize: 20,
                                                                 fontWeight:
@@ -189,7 +211,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                                 Expanded(
                                                   child: Center(
                                                     child: Text(
-                                                        '${context.watch<FoodShop>().foodShop.map((e) => e.quntity * e.price).reduce((value, element) => value + element)} B',
+                                                        '${context.watch<FoodShop>().foodShop.map((e) => e.quntity * e.price).reduce((value, element) => value + element)} บาท',
                                                         style: const TextStyle(
                                                             fontSize: 20,
                                                             fontWeight:
@@ -204,7 +226,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                               children: [
                                                 const Expanded(
                                                     child: Center(
-                                                        child: Text('Get Money',
+                                                        child: Text('รับเงินมา',
                                                             style: TextStyle(
                                                                 fontSize: 20,
                                                                 fontWeight:
@@ -280,7 +302,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                               children: [
                                                 const Expanded(
                                                     child: Center(
-                                                  child: Text('Change',
+                                                  child: Text('ทอนเงิน',
                                                       style: TextStyle(
                                                           fontSize: 20,
                                                           fontWeight:
@@ -288,7 +310,7 @@ class _MyCartPageState extends State<MyCartPage> {
                                                 )),
                                                 Expanded(
                                                     child: Center(
-                                                  child: Text('$getMoney',
+                                                  child: Text('$getMoney บาท',
                                                       style: const TextStyle(
                                                           fontSize: 20,
                                                           fontWeight:
@@ -304,12 +326,12 @@ class _MyCartPageState extends State<MyCartPage> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   SizedBox(
-                                                      width: 280,
+                                                      width: 230,
                                                       child: Image.asset(
                                                         'asset/qrCode.jpg',
                                                       )),
                                                   SizedBox(
-                                                      width: 280,
+                                                      width: 230,
                                                       child: Image.asset(
                                                         'asset/qrcode2.jpg',
                                                       )),
@@ -333,13 +355,13 @@ class _MyCartPageState extends State<MyCartPage> {
                                                             color: Colors.black,
                                                             width: 2)),
                                                 backgroundColor:
-                                                    Colors.red[400],
+                                                    Colors.red[300],
                                               ),
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
                                               child: const Text(
-                                                'Close',
+                                                'ปิด',
                                                 style: TextStyle(
                                                     fontSize: 18,
                                                     color: Colors.black87),

@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lab4">
    <application
+<<<<<<< HEAD
+        android:label="ManageFood"
+=======
         android:label="Restaurant"
+>>>>>>> bc215bcf84f5852a45a97001d3b2c856f188d9e9
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
